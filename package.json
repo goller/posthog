@@ -30,7 +30,7 @@
         "start": "concurrently -n ESBUILD,TYPEGEN -c yellow,green \"pnpm start-http\" \"pnpm run typegen:watch\"",
         "start-http": "pnpm clean && pnpm copy-scripts && node frontend/build.mjs --dev",
         "start-docker": "pnpm start-http --host 0.0.0.0",
-        "clean": "rm -rf frontend/dist && mkdir frontend/dist",
+        "clean": "rm -rf frontend/dist && mkdir -p frontend/dist",
         "build": "pnpm copy-scripts && pnpm build:esbuild",
         "build:esbuild": "node frontend/build.mjs",
         "schema:build": "pnpm run schema:build:json && pnpm run schema:build:python",
